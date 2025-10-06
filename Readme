@@ -1,0 +1,51 @@
+# 4-Bin Sorting System - Web Application
+
+## Introduction
+This web app is the frontend interface for an AI-powered automated object sorting robot. It connects to our backend to display real-time sorting info and send control commands.
+
+Your job as a web developer is to build a clean, responsive dashboard that monitors and controls the 4-bin system.
+
+## Core Features to Build
+
+### 1. Live Video Feed  
+- Show live streaming video from the Raspberry Pi webcam.  
+- Display this video prominently on the dashboard.
+
+### 2. Object Detection Display  
+- Show detected object names and their assigned bin category in real-time.  
+- Highlight the current object being processed.
+
+### 3. Bin Status Display  
+- Show the status of each of the 4 bins (Open/Closed, Active/Inactive).  
+- Use clear visual indicators (color coding/icons).
+
+### 4. Remote Bin Control  
+- Provide buttons to remotely open or close each bin.  
+- Buttons should send commands back through the backend API/WebSocket.
+
+### 5. Real-Time Data Updates  
+- Use WebSocket or similar tech to receive continuous updates from the backend.  
+- Update UI instantly when new data or commands arrive.
+
+## Technologies and Tools Suggested  
+- Frontend framework/library: **React.js** or **Vue.js** (or plain JS plus HTML/CSS)  
+- WebSocket for real-time communication (e.g., Socket.IO or native WebSocket API)  
+- Responsive UI design (mobile and desktop friendly)  
+- Connect with backend APIs (Flask or FastAPI) to send/receive data  
+
+## Development Setup  
+- Node.js/npm for frontend dependencies  
+- Instructions to connect to backend WebSocket endpoint (will be provided)  
+- Use mock backend data initially for UI development before full integration  
+
+## Deliverables  
+- Fully functional interactive web dashboard as described  
+- Clean, commented and modular code  
+- README updates with setup and running instructions  
+
+---
+
+Feel free to ask if you need UI design inputs or data format samples from ROS/backend.
+
+Looking forward to your creative and clean implementation!
+
