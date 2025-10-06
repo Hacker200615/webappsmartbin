@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - EcoManager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="antialiased text-gray-800">
+
+    <div id="main-app">
+        <div class="flex h-screen bg-gray-100">
+            <aside id="sidebar" class="w-64 bg-white shadow-md flex-shrink-0 hidden lg:block lg:flex lg:flex-col transition-all duration-300">
+                <div class="h-16 flex items-center justify-center border-b">
+                    <i data-lucide="recycle" class="w-8 h-8 text-green-600"></i>
+                    <span class="ml-2 text-xl font-bold text-gray-800">EcoManager</span>
+                </div>
+                <nav class="flex-1 px-4 py-4 space-y-2">
+                    <a class="nav-item active" href="#" data-page="dashboard"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+                    <a class="nav-item" href="#" data-page="upload"><i data-lucide="upload-cloud"></i>Upload Waste</a>
+                    <a class="nav-item" href="#" data-page="request"><i data-lucide="truck"></i>Request Disposal</a>
+                    <a class="nav-item" href="#" data-page="alerts"><i data-lucide="bell"></i>Bin Fill Alerts</a>
+                    <a class="nav-item" href="#" data-page="wallet"><i data-lucide="wallet"></i>Wallet</a>
+                    <a class="nav-item" href="#" data-page="leaderboard"><i data-lucide="trophy"></i>Leaderboard</a>
+                    <a class="nav-item" href="#" data-page="gamification"><i data-lucide="gamepad-2"></i>Gamification</a>
+                    <a class="nav-item" href="#" data-page="settings"><i data-lucide="settings"></i>Settings</a>
+                </nav>
+                <div class="px-4 py-4 border-t">
+                    <a id="logout-button" href="#" class="flex items-center p-3 rounded-lg font-medium transition-colors hover:bg-red-500 hover:text-white"><i data-lucide="log-out" class="mr-3"></i>Logout</a>
+                </div>
+            </aside>
+            <div class="flex-1 flex flex-col overflow-hidden">
+                <header class="h-16 bg-white border-b flex items-center justify-between px-6">
+                     <div class="flex items-center">
+                         <button id="menu-button" class="lg:hidden mr-4 text-gray-600"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                         <h1 id="page-title" class="text-xl font-semibold text-gray-800">Dashboard</h1>
+                     </div>
+                     <div class="flex items-center">
+                        <span class="hidden sm:inline mr-3 font-semibold text-gray-700">Welcome, user!</span>
+                        <span class="relative flex h-3 w-3 mr-4" title="Misuse Alert!"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span></span>
+                        <img class="h-10 w-10 rounded-full object-cover" src="https://placehold.co/100x100/E2E8F0/4A5568?text=U" alt="User avatar">
+                     </div>
+                </header>
+                <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6" id="user-main-content">
+                    </main>
+            </div>
+        </div>
+    </div>
+
+    <div id="feedback-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
+        <div class="bg-white rounded-lg shadow-xl p-8 max-w-sm w-full text-center transform transition-all scale-95 opacity-0">
+            <div id="modal-icon" class="mx-auto flex items-center justify-center h-12 w-12 rounded-full">
+                </div>
+            <h3 id="modal-title" class="text-2xl font-semibold text-gray-900 mt-4"></h3>
+            <p id="modal-message" class="text-gray-600 mt-2"></p>
+            <button id="close-modal-button" class="mt-6 w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition">OK</button>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/user_script.js') }}"></script>
+</body>
+</html>
